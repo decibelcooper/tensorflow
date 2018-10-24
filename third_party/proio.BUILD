@@ -2,26 +2,24 @@ package(default_visibility = ["//visibility:public"])
 
 licenses(["notice"])
 
+genrule(
+    visibility = ["//visibility:public"],
+    name = "cp_proto",
+    outs = ["proio/proto/proio.proto"],
+    srcs = ["proio.proto"],
+    cmd = "OUT_DIR=$$(dirname $(OUTS));" +
+        "cp $(SRCS) $${OUT_DIR}/",
+    #output_to_bindir = 1,
+)
 
-cc_library(
-    name = "proio",
-    srcs = [
-        "cpp-proio/src/event.cc",
-        "cpp-proio/src/reader.cc",
-        "cpp-proio/src/writer.cc",
-        ],
-    hdrs = [
-        "cpp-proio/src/event.h",
-        "cpp-proio/src/reader.h",
-        "cpp-proio/src/writer.h",
-        ],
-    deps = [
-        "@lz4_archive//:lz4",
-        ":proio.pb_cc",
-        ],
-    includes = [
-        "proto",
-        ],
+genrule(
+    visibility = ["//visibility:public"],
+    name = "cp_model_proto",
+    outs = ["proio/model/eic/eic.proto"],
+    srcs = ["model/eic/eic.proto"],
+    cmd = "OUT_DIR=$$(dirname $(OUTS));" +
+        "cp $(SRCS) $${OUT_DIR}/",
+    #output_to_bindir = 1,
 )
 
 load(
@@ -31,6 +29,7 @@ load(
 
 tf_proto_library(
     name = "proio.pb",
-#    srcs = glob(["*.proto"]),
-    srcs = ["proto/proio.proto"] + glob(["model/*.proto"]),
+    srcs = ["proio/proto/proio.proto", "proio/model/eic/eic.proto"],
+    visibility = ["//visibility:public"],
+    #include = "proio/proto",
 )

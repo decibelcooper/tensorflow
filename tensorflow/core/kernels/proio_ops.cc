@@ -5,8 +5,8 @@
 #include "tensorflow/core/lib/random/random.h"
 #include "tensorflow/core/lib/random/random_distributions.h"
 
-#include "external/proio_archive/cpp-proio/src/event.h"
-#include "external/proio_archive/model/eic.pb.h"
+#include "external/cpp-proio_archive/src/event.h"
+#include "external/proio_archive/proio/model/eic/eic.pb.h"
 
 namespace model = proio::model::eic;
 

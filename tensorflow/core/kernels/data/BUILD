@@ -512,7 +512,7 @@ tf_kernel_library(
         "//tensorflow/core:framework",
         "//tensorflow/core:lib",
         "//tensorflow/core:lib_internal",
-        "@proio_archive//:proio",
+        "@cpp-proio_archive//:proio",
     ],
 )
 

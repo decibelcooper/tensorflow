@@ -5,7 +5,7 @@
 #include "tensorflow/core/framework/shape_inference.h"
 #include "tensorflow/core/kernels/data/dataset.h"
 
-#include "external/proio_archive/cpp-proio/src/reader.h"
+#include "external/cpp-proio_archive/src/reader.h"
 
 namespace tensorflow {
 namespace {

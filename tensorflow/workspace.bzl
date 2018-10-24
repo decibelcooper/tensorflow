@@ -757,13 +757,24 @@ def tf_workspace(path_prefix="", tf_repo_name=""):
 
   tf_http_archive(
       name = "proio_archive",
-      sha256 = "413be106812f5e22f140704dbc4698172567a37b7c0d93552dcfae25f4b7e3df",
+      sha256 = "05cebe3293f7e0ad21630308e6f0cd2e32ecca6ad02de771ff0217e3153ca2ad",
       urls = [
-          "https://mirror.bazel.build/github.com/decibelcooper/proio/archive/3de7105835bf561e809f4ead4a315a9db1b3983e.zip",
-          "https://github.com/decibelcooper/proio/archive/3de7105835bf561e809f4ead4a315a9db1b3983e.zip",
+          "https://mirror.bazel.build/github.com/proio-org/proio/archive/9110b8b43f5fa2d2b6b8785483affc856cba7cd3.zip",
+          "https://github.com/proio-org/proio/archive/9110b8b43f5fa2d2b6b8785483affc856cba7cd3.zip",
       ],
       build_file = clean_dep("//third_party:proio.BUILD"),
-      strip_prefix = "proio-3de7105835bf561e809f4ead4a315a9db1b3983e/",
+      strip_prefix = "proio-9110b8b43f5fa2d2b6b8785483affc856cba7cd3/",
+  )
+
+  tf_http_archive(
+      name = "cpp-proio_archive",
+      sha256 = "3a1334a21a8a3c635e0f76ecd7087b933277fa058185e162da699dad7c69c5ad",
+      urls = [
+          "https://mirror.bazel.build/github.com/proio-org/cpp-proio/archive/v0.10.2.zip",
+          "https://github.com/proio-org/cpp-proio/archive/v0.10.2.zip",
+      ],
+      build_file = clean_dep("//third_party:cpp-proio.BUILD"),
+      strip_prefix = "cpp-proio-0.10.2/",
   )
 
   tf_http_archive(

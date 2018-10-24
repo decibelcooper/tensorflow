@@ -6251,7 +6251,7 @@ tf_kernel_library(
         "//tensorflow/core:lib",
         "//tensorflow/core:lib_internal",
         "//tensorflow/core:proio_ops_op_lib",
-        "@proio_archive//:proio",
+        "@cpp-proio_archive//:proio",
     ],
 )
 
